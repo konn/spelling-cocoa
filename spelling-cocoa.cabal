@@ -1,0 +1,44 @@
+name:                spelling-cocoa
+version:             0.1.0.0
+synopsis:            Simple project template from stack
+description:         Please see README.md
+homepage:            http://github.com/konn/spelling-cocoa#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Hiromi ISHII
+maintainer:          konn.jinro _at_ gmail.com
+copyright:           2015 (c) Hiromi ISHII
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable spelling-cocoa
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       NSRange
+  c-sources:           src/Main.m
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , bytestring
+                     , conduit
+                     , conduit-combinators
+                     , conduit-extra
+                     , containers >= 0.5.6.2
+                     , inline-c
+                     , inline-c-objc
+                     , c-storable-deriving
+                     , data-default
+                     , lens
+                     , template-haskell >= 2.10.0.0
+                     , text
+                     , parsers
+  cc-options:          -Wall -fobjc-arc 
+  ghc-options:         -fllvm -optl-ObjC -threaded
+  frameworks:          Foundation, AppKit
+  ghc-options:         -Wall
+  default-extensions:  QuasiQuotes
+                       GADTs
+                       TypeFamilies
+                       OverloadedStrings
+                       TemplateHaskell
+                       ForeignFunctionInterface
